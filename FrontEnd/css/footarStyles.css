@@ -1,8 +1,15 @@
 /*FOOTAR----------------------------------------------------------------*/
 #footar{
-    /* background-color: #053F0C; */
-    /* background: linear-gradient(to bottom, var(--backgroundColor), var(--greenPoles) 100%); */
+    background-color: var(--superDarkBlue);
 }
+#footer-box{
+    margin: 0 auto;
+    /* transform: translate(-50%, -50%); */
+    /* margin-top: 30vh; */
+    /* display: inline-block; */
+    /* line-height: 100vh; */
+}
+
 .footarColumn{
     color: #F4F4F4;
     text-align: center;

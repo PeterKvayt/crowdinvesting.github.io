@@ -5,12 +5,28 @@
 
 .wrapper{
     /* background-color: var(--backgroundColor); */
-    background: linear-gradient(to bottom, var(--backgroundColor)15%, var(--greenPoles)100%);
+    /* background: linear-gradient(to bottom, var(--backgroundColor)15%, var(--darkBlue)100%); */
     /* margin: auto;
     width: 100%;
     height: auto;
     font-weight: 400; */
 }
+
+#full-page-wrapper{
+    /* display: block;
+    position: relative;
+    height: 100%;
+    overflow: hidden; */
+}
+.full-page-section{
+    /* display: block;
+    position: relative; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
 .navbar{
     position: fixed;
     width: 100%;
@@ -40,7 +56,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--greenPoles);
+    background-color: var(--darkBlue);
     transition: 0.2s;
     transform: scaleX(0);
 }
@@ -48,5 +64,5 @@
     transform: scaleX(1);
 }
 .nav-link:hover{
-    color: var(--greenPoles)!important;
+    color: var(--darkBlue)!important;
 }

@@ -6,6 +6,8 @@ $(document).ready(function(){
       effect : "fadeIn"
   });
 
+  $('.full-page-section').scrollSections();
+
   // меняет модальные окна
   function ChangeModalWindow(tag){
     let current = $('.my-modal-content-active');

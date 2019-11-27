@@ -39,8 +39,8 @@ class ProjectCard {
         '<div class="card-box">'+
           '<div class="card-picture-wrapper">'+
             '<div class="card-picture-box">'+
-              '<a class="card-picture-link" href="project-page.html">ПОДДЕРЖАТЬ ПРОЕКТ</a>'+
-              '<img class="card-picture-hover" src="images/exampleProjectPictHover.png"/>' +
+              '<a class="card-picture-link" href="project-page.html">ИНВЕСТИРОВАТЬ</a>'+
+              '<img class="card-picture-hover" src="images/exampleProjectPictHover.svg"/>' +
               '<img class="card-picture lazy" data-original="'+ this.ImagePath +'" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
             '</div>'+
           '</div>'+
@@ -97,7 +97,7 @@ class ProjectCard {
           '<div class="card-picture-wrapper">'+
             '<div class="card-picture-box">'+
               '<a class="card-picture-link" href="create-project.html">РЕДАКТИРОВАТЬ</a>'+
-              '<img class="card-picture-hover" src="images/exampleProjectPictHover.png"/>' +
+              '<img class="card-picture-hover" src="images/exampleProjectPictHover.svg"/>' +
               '<img class="card-picture lazy" data-original="'+ this.ImagePath +'" alt="Project picture" src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw==">'+
             '</div>'+
           '</div>'+
