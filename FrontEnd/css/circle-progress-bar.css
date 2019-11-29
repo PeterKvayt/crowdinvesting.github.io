@@ -1,0 +1,59 @@
+:root{
+  --diameter: 200px;
+  --accent: blue;
+  --gray: gray;
+  --progress: 270;
+  --border: 20px;
+}
+
+.progress {
+  position: relative;
+  width: --diameter;
+  height: --diameter;
+  border-radius: 50%;
+  background-color: --accent;
+}
+  .progress::before {
+    position: absolute;
+    content: '';
+    @if --progress > 180 {
+      background-color: --accent;
+    }
+    @if --progress <= 180 {
+      background-color: --gray;
+    }
+    width: --diameter;
+    height: --diameter;
+    border-radius: 50%;
+    clip: rect(0, #{--diameter/2}, --diameter, 0);
+    transform-origin: 50% 50%;
+    @if --progress <= 180 {
+      transform: rotate(#{180 + --progress}deg);
+    }
+    @if --progress > 180 {
+      transform: rotate(#{180 + --progress - 180}deg);
+    }
+    z-index: 1;
+  }
+  .progress::after {
+    position: absolute;
+    content: '';
+    background-color: --gray;
+    width: --diameter;
+    height: --diameter;
+    border-radius: 50%;
+    clip: rect(0, #{--diameter/2}, --diameter, 0);
+    transform-origin: 50% 50%;
+    transform: rotate(0deg);
+  }
+  .center {
+    position: absolute;
+    top: --border;
+    left: --border;
+    width: #{--diameter - 2 * --border};
+    height: #{--diameter - 2 * --border};
+    background-color: red;
+    border-radius: 50%;
+    z-index: 2;
+  }
+}

@@ -192,12 +192,12 @@ $(document).ready(function(){
     else{
       toTopBtn.children().first().attr('class', 'fa fa-chevron-up fa-2x')
     }
-    if (prevScrollpos > window.pageYOffset) {
-      $('#navbar').css({'top': '0'});
-    } 
-    else {
-      $('#navbar').css({'top': '-70px'});
-    }
+    // if (prevScrollpos > window.pageYOffset) {
+    //   $('#navbar').css({'top': '0'});
+    // } 
+    // else {
+    //   $('#navbar').css({'top': '-70px'});
+    // }
     prevScrollpos = window.pageYOffset;
   });
 

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Project Spark</title>
+        <link href="images/logo.png" rel="shortcut icon"><!-- ico -->
+        <link href="css/bootstrap4.1.3.min.css" rel="stylesheet" type="text/css"><!-- библиотека bootstrap -->
+        <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
+        <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+        <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body>
+        <div class="wrapper" id="full-page-wrapper">
+            <!-- Модальные окна -->
+            <div class="modal fade" id="modalEnter">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <!-- вход -->
+                            <div id="enter-modal" class="my-modal-content-active">
+                                <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                                <h4 class="title">Вход</h4>
+                                <p>
+                                    <input class="inputBox email-input" type="text" placeholder="Email">
+                                </p>
+                                <p>
+                                    <div class="social-input-box password-input">
+                                        <span class="fa fa-eye-slash fa-fw"></span>
+                                        <input class="social-input" type="password" placeholder="Пароль">
+                                    </div>
+                                </p>
+                                <p class="modalLink">
+                                    <span id="forgot-password-btn" class="link">Забыли пароль?</span>
+                                </p>
+                                <p>
+                                    <span class="category modal-enter-btn">ВОЙТИ</span>
+                                </p>
+                                <p>
+                                    <span class="category modal-registration-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                                </p>
+                            </div>
+                            <!-- регистрация -->
+                            <div id="registration-modal" class="my-modal-content">
+                                <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                                <h4 class="title">Регистрация</h4>
+                                <p>
+                                    <input class="inputBox" type="text" placeholder="Имя Фамилия">
+                                </p>
+                                <p>
+                                    <input class="inputBox email-input" type="text" placeholder="Email">
+                                </p>
+                                <div class="row" style="margin-bottom:7px;">
+                                    <div class="col-lg-11 col-md-11 col-sm-11">
+                                        <div class="social-input-box password-input">
+                                            <span class="fa fa-eye-slash fa-fw"></span>
+                                            <input id="registration-password-input-modal" class="social-input" type="password" placeholder="Пароль">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1">
+                                        <div id="modal-password-status-box" class="modal-password-status">
+                                            <span id="password-security-pict-modal" class="fa fa-unlock fa-fw"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-11 col-md-11 col-sm-11">
+                                        <div class="social-input-box password-input">
+                                            <span class="fa fa-eye-slash fa-fw"></span>
+                                            <input id="second-registration-password-input-modal" class="social-input" type="password" placeholder="Повторите пароль">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1 col-md-1 col-sm-1">
+                                        <div class="modal-password-status">
+                                            <span id="second-registration-password-status-modal" class="fa fa-exclamation-circle fa-fw"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <p class="modalLink modalConditionRegistration">
+                                    Нажимая кнопку зарегистрироваться, вы автоматически подтверждаете,
+                                    что ознакомлены и согласны с <a class="link" href="agreement.html">Пользовательским соглашением</a>
+                                    платформы "Kapitalus".
+                                </p>
+                                <p>
+                                    <span class="category modal-registration-btn">ЗАРЕГИСТРИРОВАТЬСЯ</span>
+                                </p>
+                                <p>
+                                    <span class="category modal-enter-btn">ВОЙТИ</span>
+                                </p>
+                            </div>
+                            <!-- восстановление пароля -->
+                            <div id="password-recovery-modal" class="my-modal-content">
+                                <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                                <h4 class="title">Восстановление пароля</h4>
+                                <p>
+                                    <input class="inputBox email-input" type="text" placeholder="Email">
+                                </p>
+                                <p>
+                                    Для восстановления пароля необходимо ввести почту, с которой связан ваш аккаунт.
+                                    На нее будет отправлено сообщение для восстановления пароля.
+                                </p>
+                                <p>
+                                    <span class="category modal-recovery-btn" href="#">ВОССТАНОВИТЬ</span>
+                                </p>
+                                <p>
+                                    <span class="category modal-enter-btn">ВОЙТИ</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="main">
+                <!-- первая секция (для незарегистрированных пользователей)-->
+                <div class="full-page-section">
+                  <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+                    <a href="index.html"><img src="images/logo.png" height="50px" alt="logo" /></a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
+                      <ul class="navbar-nav text-center">
+                        <li class="nav-item">
+                          <a class="nav-link" href="all-projects.html">ИНВЕСТИРОВАТЬ <span class="fa fa-book fa-fw"></span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="create-project-rules.html">ПРИВЛЕЧЬ ИНВЕСТИЦИИ <span
+                              class="fa fa-pencil fa-fw"></span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="how-it-works.html">КАК ЭТО РАБОТАЕТ <span class="fa fa-info fa-fw"></span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#modalEnter" data-toggle="modal" class="nav-link">ВОЙТИ <span class="fa fa-sign-in fa-fw"></a></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </nav>
+                  <div class="container" style="margin-top:0px;">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="box">
+                          <div class="row">
+                            <div class="col-12">
+                              <h4 class="title-min-left" style="text-align:center;">Название компании</h4>
+                            </div>
+                            <div class="col-12">
+                              <div class="title">
+
+                                <img class="video-box" src="images/exampleProjectPict.png" alt="">
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <h4 class="title-min-left">Project Spark</h4>
+                            </div>
+                            <div class="col-12" style="text-align: justify;">
+                              К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы
+                              представляем сбор на новый альбом, который обещает стать настоящим феноменом
+                              музыкальной индустрии.
+                              К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы
+                              представляем сбор на новый альбом, который обещает стать настоящим феноменом
+                              музыкальной индустрии.
+                            </div>
+                            <div class="col-12">
+                              <h4 class="title-min-left">Поделиться</h4>
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                              <a href="#">
+                                <span class="fa fa-vk fa-3x"></span>
+                              </a>
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                              <a href="#">
+                                <span class="fa fa-twitter-square fa-3x"></span>
+                              </a>
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                              <a href="#">
+                                <span class="fa fa-linkedin-square fa-3x"></span>
+                              </a>
+                            </div>
+                            <div class="col-3" style="text-align:center;">
+                              <a href="#">
+                                <span class="fa fa-facebook-square fa-3x"></span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="box">
+                          <div class="row">
+                            <div class="col-lg-6"></div>
+                            <div class="col-lg-6">
+                              <span class="sub-title">Открыт для инвестиций</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="littleShortText">ЦЕЛЕВОЙ ОБЪЕМ ИНВЕСТИЦИЙ</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="title shortTextInfo">9000000</span>
+                              <span class="littleShortText"> BYN</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="littleShortText">ПРИВЛЕЧЕННЫЕ СРЕДСТВА</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="title shortTextInfo">4500000</span>
+                              <span class="littleShortText"> BYN</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="littleShortText">СРОК ДЕЙСТВИЯ КАМПАНИИ</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="littleShortText">ДО </span>
+                              <span class="title shortTextInfo">13 </span>
+                              <span class="title shortTextInfo">ФЕВРАЛЯ </span>
+                            </div>
+                            <div class="col-12">
+                              <span class="title shortTextInfo">2019 </span>
+                              <span class="littleShortText"> ГОДА</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="title shortTextInfo">117</span>
+                              <span class="littleShortText"> КОЛИЧЕСТВО ИНВЕСТОРОВ</span>
+                            </div>
+                            <div class="col-12">
+                              <span class="littleShortText">ФОРМАТ ИНВЕСТИРОВАНИЯ </span>
+                              <span class="title shortTextInfo">РОЯЛТИ</span>
+                            </div>
+                            <div class="col-6">
+                              <div class="good-act-category">ИНВЕСТИРОВАТЬ</div>
+                            </div>
+                            <div class="col-6">
+                              <div class="category">НАПИСАТЬ</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <div class="title">
+                                <a class="my-btn" href="#">ПОДРОБНЕЕ</a>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Описание проекта -->
+                <div class="full-page-section">
+                    <div class="container" style="margin-top:0px;">
+                        <div class="row">
+                            <div class="col-12">
+                              <h3 class="title">ОПИСАНИЕ ПРОЕКТА</h3>
+                            </div>
+                            <div class="col-8">
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Сущность (Как это работает?)
+                              </div>
+                              <div class="accordion-content">
+                                Авторы видят имя спонсора и выбранное вознаграждение. В случае, если проект соберет необходимую
+                                сумму средств, автор проекта сможет связаться со спонсором по электронной почте, чтобы узнать дополнительную
+                                информацию о способах доставки вознаграждения.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Продукты / Услуги
+                              </div>
+                              <div class="accordion-content">
+                                Краудфа́ндинг (от английских слов сrowd — «толпа», и funding — «финансирование») — это коллективное сотрудничество
+                                людей (спонсоров), которые добровольно объединяют свои деньги или другие ресурсы вместе, как правило через Интернет,
+                                чтобы поддержать идеи других людей или организаций (авторов). При этом сбор средств осуществляется для самых
+                                различных целей.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Решаемые проблемы (почему он нужен людям?)
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Занятость рынка / размер рынка
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Конкуренты
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Конкурентные преимущества
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> SWOT-анализ
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Бизнес модель
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Контакты
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                            </div>
+                            <div class="col-4">
+                              <img class="video-box" src="images/notebook.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="title">
+                                    <a class="my-btn" href="#">ПОДАТЬ ЗАЯВКУ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Инвестиционное предложение -->
+                <div class="full-page-section">
+                    <div class="container" style="margin-top:0px;">
+                        <div class="row">
+                            <div class="col-12">
+                              <h3 class="title">ИНВЕСТИЦИОННОЕ ПРЕДЛОЖЕНИЕ</h3>
+                            </div>
+                            <div class="col-12">
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Требуемая сумма денежных средств
+                              </div>
+                              <div class="accordion-content">
+                                Авторы видят имя спонсора и выбранное вознаграждение. В случае, если проект соберет необходимую
+                                сумму средств, автор проекта сможет связаться со спонсором по электронной почте, чтобы узнать дополнительную
+                                информацию о способах доставки вознаграждения.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Направления использования денежных средств
+                              </div>
+                              <div class="accordion-content">
+                                Краудфа́ндинг (от английских слов сrowd — «толпа», и funding — «финансирование») — это коллективное сотрудничество
+                                людей (спонсоров), которые добровольно объединяют свои деньги или другие ресурсы вместе, как правило через Интернет,
+                                чтобы поддержать идеи других людей или организаций (авторов). При этом сбор средств осуществляется для самых
+                                различных целей.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Дорожная карта основных этапов реализации проекта с датами
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Форма участия в капитале, доля участия
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Будущие выгоды инвесторов (в зависимости от того, как видит себя компания в будущем)
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Бонусы для инвесторов
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Минимальная сумма инвестиций
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                              <div class="accordion-btn">
+                                <span class="fa fa-plus fa-fw"></span> Предварительная оценка стоимости компании / стартапа
+                              </div>
+                              <div class="accordion-content">
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                                После того, как проект отправлен на модерацию, он попадает в очередь на обработку. Один из членов команды «Poless
+                                Invest»
+                                проверяет проект на соответствие правилам, перечисленным в Пользовательском соглашении, и в течение трех рабочих
+                                дней сообщает автору о результате. Если проект соответствует требованиям, автор может приступить к его запуску в
+                                «Poless Invest». Если проект не проходит модерацию, команда «Poless Invest» указывает автору причину отказа в
+                                размещении проекта на
+                                площадке. В этом случае автор может изменить проект согласно требованиям и повторно отправить его на рассмотрение.
+                              </div>
+                            </div>
+                          </div>
+                              <div class="row">
+                                  <div class="col">
+                                      <div class="title">
+                                          <a class="my-btn" href="#">ИНВЕСТИРОВАТЬ</a>
+                                      </div>
+                                  </div>
+                              </div>
+                    </div>
+                </div>
+                <!-- КОМАНДА ПРОЕКТА -->
+                <div class="full-page-section">
+                  <div class="container" style="margin-top:0px;">
+                    <div class="row">
+                      <div class="col-12">
+                        <h3 class="title">КОМАНДА ПРОЕКТА</h3>
+                      </div>
+                      <div class="col-12">
+                        <div class="row">
+                          <div class="col-lg-3 col-md-6 col-sm-6">
+                            <img class="video-box" src="images/stuff1.webp" width="100%" alt="full-stack developer photo">
+                            <p>
+                              <span class="projectName">Jon Doe</span>
+                              <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                              <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                            </p>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-6">
+                            <img class="video-box" src="images/stuff2.webp" width="100%" alt="full-stack developer photo">
+                            <p>
+                              <span class="projectName">Jon Doe</span>
+                              <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                              <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                            </p>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-6">
+                            <img class="video-box" src="images/stuff1.webp" width="100%" alt="full-stack developer photo">
+                            <p>
+                              <span class="projectName">Jon Doe</span>
+                              <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                              <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                            </p>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-6">
+                            <img class="video-box" src="images/stuff2.webp" width="100%" alt="full-stack developer photo">
+                            <p>
+                              <span class="projectName">Jon Doe</span>
+                              <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                              <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                            </p>
+                          </div>
+                          <div class="col-lg-3 col-md-6 col-sm-6">
+                            <img class="video-box" src="images/stuff1.webp" width="100%" alt="full-stack developer photo">
+                            <p>
+                              <span class="projectName">Jon Doe</span>
+                              <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                              <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                          </div>
+                    </div>
+                </div>
+                <!-- ЭКСПЕРТЫ ПРОЕКТА -->
+                <div class="full-page-section">
+                    <div class="container" style="margin-top:0px;">
+                      <div class="row">
+                        <div class="col-12">
+                          <h3 class="title">ЭКСПЕРТЫ ПРОЕКТА</h3>
+                        </div>
+                        <div class="col-12">
+                          <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                              <img class="video-box" src="images/stuff1.webp" width="100%" alt="full-stack developer photo">
+                              <p>
+                                <span class="projectName">Jon Doe</span>
+                                <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                                <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                              </p>
+                              <p>
+                                  Авторы видят имя спонсора и выбранное вознаграждение. В случае, если проект соберет необходимую
+                                  сумму средств, автор проекта сможет связаться со спонсором по электронной почте, чтобы узнать дополнительную
+                                  информацию о способах доставки вознаграждения.
+                              </p>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                              <img class="video-box" src="images/stuff2.webp" width="100%" alt="full-stack developer photo">
+                              <p>
+                                <span class="projectName">Jon Doe</span>
+                                <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                                <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                              </p>
+                              <p>
+                                  Авторы видят имя спонсора и выбранное вознаграждение. В случае, если проект соберет необходимую
+                                  сумму средств, автор проекта сможет связаться со спонсором по электронной почте, чтобы узнать дополнительную
+                                  информацию о способах доставки вознаграждения.
+                              </p>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                              <img class="video-box" src="images/stuff1.webp" width="100%" alt="full-stack developer photo">
+                              <p>
+                                <span class="projectName">Jon Doe</span>
+                                <span style="display:block;color: var(--borderBtn);">идейный вдохновитель</span>
+                                <span style="display:block;color: var(--borderBtn);">Email: email@mail.ru</span>
+                              </p>
+                              <p>
+                                  Авторы видят имя спонсора и выбранное вознаграждение. В случае, если проект соберет необходимую
+                                  сумму средств, автор проекта сможет связаться со спонсором по электронной почте, чтобы узнать дополнительную
+                                  информацию о способах доставки вознаграждения.
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                            </div>
+                      </div>
+                  </div>
+                  <!-- ЭКСПЕРТНАЯ ОЦЕНКА ПРОЕКТА -->
+                <div class="full-page-section">
+                    <div class="container" style="margin-top:0px;">
+                      <div class="row">
+                        <div class="col-12">
+                          <h3 class="title">ЭКСПЕРТНАЯ ОЦЕНКА ПРОЕКТА</h3>
+                        </div>
+                        <div class="col-12">
+                          <div class="row">
+                              <div class="col-lg-4 col-md-4 col-sm-6">
+                                  <h3 class="title">ИДЕЯ / ПРОДУКТ</h3>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-sm-6">
+                                  <h3 class="title">ТЕХНОЛОГИЧЕСКАЯ ГОТОВНОСТЬ</h3>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-sm-6">
+                                  <h3 class="title">ИНВЕСТИЦИОННАЯ ПРИВЛЕКАТЕЛЬНОСТЬ</h3>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="title">
+                                  <span class="shortTextInfo">7</span>
+                                      <span class="littleShortText"> ИЗ </span>
+                                      <span class="shortTextInfo">10</span>
+                                </div>
+                              </div>
+                              <div class="col-lg-4 col-md-4 col-sm-6">
+                                  <div class="title">
+                                    <span class="shortTextInfo">2</span>
+                                        <span class="littleShortText"> ИЗ </span>
+                                        <span class="shortTextInfo">10</span>
+                                  </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-6">
+                                    <div class="title">
+                                      <span class="shortTextInfo">5</span>
+                                          <span class="littleShortText"> ИЗ </span>
+                                          <span class="shortTextInfo">10</span>
+                                    </div>
+                                  </div>
+                          </div>
+                        </div>
+                            </div>
+                      </div>
+                  </div>
+                <!-- footer -->
+                <div id="footar" class="full-page-section">
+                    <!-- <div > -->
+                    <div class="container">
+                        <div class="row" id="footer-box">
+                            <div class="footarColumn col-lg-3">
+                                <a href="index.html" class="footarColumnTitle"><img src="images/logo.png" height="50px"
+                                        alt="logo" /></a>
+                                <p class="footarText">
+                                    ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                                </p>
+                            </div>
+                            <div class="footarColumn col-lg-3">
+                                <div class="footarColumnTitle">
+                                    <h5>О НАС</h5>
+                                </div>
+                                <div>
+                                    <a href="about.html" class="footarLinks">О платформе</a><br>
+                                    <a href="agreement.html" class="footarLinks">Пользовательское соглашение</a><br>
+                                    <a href="contacts.html" class="footarLinks">Контакты</a>
+                                </div>
+                            </div>
+                            <div class="footarColumn col-lg-3">
+                                <div class="footarColumnTitle">
+                                    <h5>ПОМОЩЬ</h5>
+                                </div>
+                                <div>
+                                    <a href="platform-rules.html" class="footarLinks">Правила платформы</a><br>
+                                    <a href="faq.html" class="footarLinks">F.A.Q.</a><br>
+                                    <a href="feedback.html" class="footarLinks">Обратная связь</a>
+                                </div>
+                            </div>
+                            <div class="footarColumn col-lg-3">
+                                <div class="footarColumnTitle">
+                                    <h5>КОНТАКТЫ</h5>
+                                </div>
+                                <div>
+                                    <p class="footarText">
+                                        Tel.: + 375 (165) 31 21 60<br>
+                                        Fax: + 375 (165) 31 21 95<br>
+                                        email@mail.ru
+                                    </p>
+                                </div>
+                                <br><br><br>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+            </div>
+        </div>
+        <div id="alert" class="box alert">
+            <div class="row">
+                <div class="col-1">
+                    <span class="fa fa-exclamation fa-3x"></span>
+                </div>
+                <div id="alert-text" style="text-align: justify;" class="col-11"></div>
+            </div>
+        </div>
+        <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+        <script src="js/plugins.js"></script>
+        <script src="js/jquery.scrollSections.js"></script>  
+        <script src="js/lazy-load.min.js"></script><!--lazy load-->
+        <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
+        <!-- <script src="js/projectCard.js"></script> -->
+        <!-- <script src="js/index.js"></script> -->
+        <script src="js/main.js"></script>
+        <script src="js/faq.js"></script><!-- js bootstrap-->
+    </body>
+</html>

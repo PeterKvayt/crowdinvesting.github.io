@@ -28,7 +28,7 @@
 
 
 .navbar{
-    position: fixed;
+    /* position: fixed; */
     width: 100%;
     border-bottom: 1px solid #fff;
     opacity: 0.985;
