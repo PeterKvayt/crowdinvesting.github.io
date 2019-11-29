@@ -1,2 +1,2 @@
 # crowdinvesting.github.io
-Repository for crowdinvesting platform
+Ссылка на демо платформы: [CrowdInvesting]( https://peterkvayt.github.io/crowdinvesting.github.io/FrontEnd/index.html)
