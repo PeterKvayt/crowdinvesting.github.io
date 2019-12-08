@@ -123,8 +123,8 @@ class ProjectCard {
 
   // return progress in percent
   GetProgress() {
-
-    return ((Number(this.Progress) / Number(this.Budget)) * 100).toFixed();
+    let result = ((Number(this.Progress) / Number(this.Budget)) * 100).toFixed();
+    return result >= 100 ? 100 : result;
   }
 
   // return width of progress-bar

@@ -5,7 +5,7 @@
   --lightBlue: #525FD1;
   --superDarkBlue: #001575;
   --darkBlue: #0A2086;
-  --backgroundColor: #F4F4F4;
+  --backgroundColor: #E0EDFF;
   --borderBtn: #7C7C7D;
   --border: #DFDFDF;
   --lightGreen: #00E600;
@@ -27,7 +27,7 @@
   /* -зелекая кнопка */
 .my-btn{
   color: var(--superDarkBlue);
-  background-color: var(--border);
+  background-color: var(--backgroundColor);
   border: 1px solid var(--superDarkBlue);
   border-radius: 4px;
   padding: 0.5rem 1rem;
