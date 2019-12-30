@@ -1,6 +1,7 @@
 .answer{
   font-size: 20px;
-  position: relative; top:-4px;
+  position: relative; 
+  top:-4px;
 }
 
 .answer-check:hover{

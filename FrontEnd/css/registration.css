@@ -1,0 +1,30 @@
+.mid-higth-font{
+  font-size: 18px;
+  position: relative;
+  top:2px;
+}
+
+.registration-check:hover{
+  display: inline-block;
+  cursor: pointer;
+}
+
+
+.tooltip-text{
+  position: absolute;
+  z-index: 1;
+  visibility: hidden;
+  width: 300px;
+  background-color: var(--darkBlue);
+  margin-left: 1rem;
+  color: #fff;
+  text-align: justify;
+  padding: 5px 5px;
+  border-radius: 6px;
+
+  opacity: 0.9; 
+}
+
+.registration-check:hover .tooltip-text{
+  visibility: visible;
+}

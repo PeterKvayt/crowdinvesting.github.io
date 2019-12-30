@@ -65,7 +65,7 @@ $(document).ready(function(){
       alertElem.css('background-color', '#fc6c85');
     }
     let messageBox = $('#alert-text');
-    let elemY = elem.offset().top - 80;
+    let elemY = elem.offset();
     messageBox.html(message);
     alertElem.slideDown(400);
     setTimeout(function () {
@@ -201,7 +201,7 @@ $(document).ready(function(){
     prevScrollpos = window.pageYOffset;
   });
 
-  // click-event to-to-btn
+  // click-event to-top-btn
   toTopBtn.click(function () {
     if(toTopBtn.children().first().attr('class') == 'fa fa-chevron-down fa-2x'){
       $('body,html').animate({ scrollTop: $('body').height() }, 500);
