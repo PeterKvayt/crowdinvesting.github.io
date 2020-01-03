@@ -1413,3 +1413,15 @@ body{
   position: relative;
   left: -25px;
 }
+
+#expert-mark-box{
+  position: relative;
+}
+#expert-mark{
+  margin: 0 auto;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateY(-50%);
+  transform: translateX(-50%);
+}
