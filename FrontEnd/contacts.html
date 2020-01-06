@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Контакты | Valoshka</title>
+    <link href="images/logo.png" rel="shortcut icon"><!-- ico -->
+    <link href="css/bootstrap4.1.3.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"><!-- библиотека bootstrap -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">        
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet"><!--шрифты-->
+    <link href="css/headerStyles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/styles.css" rel="stylesheet" type="text/css"/>
+    <link href="css/footarStyles.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+  <div class="wrapper">
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-light">
+        <a href="index.html"><img src="images/logo.png" height="50px" alt="logo" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="navbarContent" class="collapse navbar-collapse justify-content-center">
+            <ul class="navbar-nav text-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="all-projects.html">ИНВЕСТИРОВАТЬ <span
+                            class="fa fa-book fa-fw"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="create-project-rules.html">ПРИВЛЕЧЬ ИНВЕСТИЦИИ <span
+                            class="fa fa-pencil fa-fw"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="how-it-works.html">КАК ЭТО РАБОТАЕТ <span
+                            class="fa fa-info fa-fw"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="search.html">ПОИСК <span class="fa fa-search fa-fw"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a href="#modalEnter" data-toggle="modal" class="nav-link">ВОЙТИ <span
+                            class="fa fa-sign-in fa-fw"></a></span>
+                </li>
+            </ul>
+        </div>
+    </nav>
+      <!-- Модальные окна -->
+      <div class="modal fade" id="modalEnter">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <!-- вход -->
+                    <div id="enter-modal" class="my-modal-content-active">
+                        <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                        <h4 class="title">Вход</h4>
+                        <p>
+                            <input class="inputBox email-input" type="text" placeholder="Email">
+                        </p>
+                        <p>
+                            <div class="social-input-box password-input">
+                                <span class="fa fa-eye-slash fa-fw"></span>
+                                <input class="social-input" type="password" placeholder="Пароль">
+                            </div>
+                        </p>
+                        <p class="modalLink">
+                            <span id="forgot-password-btn" class="link">Забыли пароль?</span>
+                        </p>
+                        <p>
+                            <span class="category modal-enter-btn">ВОЙТИ</span>
+                        </p>
+                        <p>
+                            <a href="registration.html" class="category">ЗАРЕГИСТРИРОВАТЬСЯ</a>
+                        </p>
+                    </div>
+                    <!-- восстановление пароля -->
+                    <div id="password-recovery-modal" class="my-modal-content">
+                        <button class="closeBtn" id="modalEnterClose" data-dismiss="modal">&times;</button>
+                        <h4 class="title">Восстановление пароля</h4>
+                        <p>
+                            <input class="inputBox email-input" type="text" placeholder="Email">
+                        </p>
+                        <p>
+                            Для восстановления пароля необходимо ввести почту, с которой связан ваш аккаунт.
+                            На нее будет отправлено сообщение для восстановления пароля.
+                        </p>
+                        <p>
+                            <span class="category modal-recovery-btn" href="#">ВОССТАНОВИТЬ</span>
+                        </p>
+                        <p>
+                            <span class="category modal-enter-btn">ВОЙТИ</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+          <div class="row">
+            <div class="col box">
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="title">Контакты</h3>
+                        <p>
+                            ООО “Poless Invest”, 220030, г. Пинск, ул. Кирова, д. 24. Контактный телефон: +375 (29) 123-45-67.
+                        </p>
+                        <iframe class="video-box"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2449.84560602369!2d26.117430915542254!3d52.118937920879695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4727a3e20a84df2d%3A0xa02de65286d335fb!2z0J_QvtC70LXRgdCT0KMuINCa0L7RgNC_0YPRgSDihJYgMQ!5e0!3m2!1sru!2sby!4v1566810972845!5m2!1sru!2sby"
+                            width="100%" height="600" frameborder="0" style="border:0;" allowfullscreen="">
+                        </iframe>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <br>
+                        <img class="video-box" src="images/4220.jpg" width="100%" alt="full-stack developer photo">
+                        <p>
+                            <span class="projectName">Бучик Татьяна</span>
+                            <span style="display:block;color: var(--borderBtn);">руководитель</span>
+                            <span style="display:block;color: var(--borderBtn);">Email: fbd1@mail.ru</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <br>
+                        <img class="video-box" src="images/64.jpg" width="100%" alt="full-stack developer photo">
+                        <p>
+                            <span class="projectName">Голикова Анна</span>
+                            <span style="display:block;color: var(--borderBtn);">руководитель</span>
+                            <span style="display:block;color: var(--borderBtn);">Email: anna.golikova@mail.ru</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <br>
+                        <img class="video-box" src="images/dean.png" width="100%" alt="full-stack developer photo">
+                        <p>
+                            <span class="projectName">Игорь Янковский</span>
+                            <span style="display:block;color: var(--borderBtn);">руководитель</span>
+                            <span style="display:block;color: var(--borderBtn);">Email: yanki_by@mail.ru</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <br>
+                        <img class="video-box" src="images/46.png" width="100%" alt="full-stack developer photo">
+                        <p>
+                            <span class="projectName">Татьяна Кисель</span>
+                            <span style="display:block;color: var(--borderBtn);">эксперт по базам данных</span>
+                            <span style="display:block;color: var(--borderBtn);">Email: kisel_t@mail.ru</span>
+                        </p>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <br>
+                        <img class="video-box" src="images/full-stack-developer.jpg" width="100%" alt="full-stack developer photo">
+                        <p>
+                            <span class="projectName">Петр Квятковский</span>
+                            <span style="display:block;color: var(--borderBtn);">full-stack разработчик</span>
+                            <span style="display:block;color: var(--borderBtn);">Email: peter.kvayt@gmail.com</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+          <!-- footer -->
+          <div id="footar">
+            <div class="container">
+                <div class="row" id="footer-box">
+                    <div class="footarColumn col-lg-3">
+                        <a href="index.html" class="footarColumnTitle"><img src="images/logo.png" height="50px"
+                                alt="logo" /></a>
+                        <p class="footarText">
+                            ул. Днепровской флотилии, 23, 225710 Пинск, Брестская область, Республика Беларусь.
+                        </p>
+                    </div>
+                    <div class="footarColumn col-lg-3">
+                        <div class="footarColumnTitle">
+                            <h5>О НАС</h5>
+                        </div>
+                        <div>
+                            <a href="about.html" class="footarLinks">О платформе</a><br>
+                            <a href="agreement.html" class="footarLinks">Пользовательское соглашение</a><br>
+                            <a href="contacts.html" class="footarLinks">Контакты</a>
+                        </div>
+                    </div>
+                    <div class="footarColumn col-lg-3">
+                        <div class="footarColumnTitle">
+                            <h5>ПОМОЩЬ</h5>
+                        </div>
+                        <div>
+                            <a href="platform-rules.html" class="footarLinks">Правила платформы</a><br>
+                            <a href="faq.html" class="footarLinks">F.A.Q.</a><br>
+                            <a href="feedback.html" class="footarLinks">Обратная связь</a>
+                        </div>
+                    </div>
+                    <div class="footarColumn col-lg-3">
+                        <div class="footarColumnTitle">
+                            <h5>КОНТАКТЫ</h5>
+                        </div>
+                        <div>
+                            <p class="footarText">
+                                Tel.: + 375 (165) 31 21 60<br>
+                                Fax: + 375 (165) 31 21 95<br>
+                                email@mail.ru
+                            </p>
+                        </div>
+                        <br><br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+  </div>
+  <div id="alert" class="box alert">
+        <div class="row">
+            <div class="col-1">
+                <span class="fa fa-exclamation fa-3x"></span>
+            </div>
+            <div id="alert-text" style="text-align: justify;" class="col-11"></div>
+        </div>
+    </div>
+    <script src="js/jquery-3.0.0.min.js"></script><!--jQuery-->
+    <script src="js/lazy-load.min.js"></script><!--lazy load-->
+    <script src="js/bootstrap4.1.3.min.js"></script><!-- js bootstrap-->
+    <script src="js/main.js"></script>
+</body>
+</html>
