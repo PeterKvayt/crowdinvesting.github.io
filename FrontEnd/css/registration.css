@@ -4,8 +4,11 @@
   top:2px;
 }
 
-.registration-check:hover{
+
+.registration-check{
   display: inline-block;
+}
+.registration-check:hover{
   cursor: pointer;
 }
 
