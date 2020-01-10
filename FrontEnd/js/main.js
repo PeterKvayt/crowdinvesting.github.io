@@ -1,12 +1,6 @@
 
 $(document).ready(function(){
-  // lazyload init
-  $('.lazy').lazyload(
-    {
-      effect : "fadeIn"
-  });
-
-  $('.full-page-section').scrollSections();
+  
 
   // меняет модальные окна
   function ChangeModalWindow(tag){
@@ -94,9 +88,9 @@ $(document).ready(function(){
   })
 
   // нажатие на кнопку зарегистрироваться
-  $('.modal-registration-btn').on('click', function(){
-    ChangeModalWindow('registration-modal');
-  })
+  // $('.modal-registration-btn').on('click', function(){
+  //   ChangeModalWindow('registration-modal');
+  // })
 
   // нажатие на кнопку восстановить пароль
   $('#forgot-password-btn').on('click', function(){
@@ -210,4 +204,13 @@ $(document).ready(function(){
       $('body,html').animate({ scrollTop: 0 }, 500);
     }
   });
+
+  // это должно быть в конце, т.к. все ломает
+  // lazyload init
+  $('.lazy').lazyload(
+    {
+      effect : "fadeIn"
+  });
+
+  $('.full-page-section').scrollSections();
  });
