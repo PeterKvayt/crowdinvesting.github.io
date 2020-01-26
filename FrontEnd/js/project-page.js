@@ -3,8 +3,8 @@ $(document).ready(function(){
   let financialAim = document.getElementById('financial-aim').firstChild.data.trim();
 
   // устанавливает пробелы
-  document.getElementById('profit').firstChild.data = SetSpace(profit);
   document.getElementById('financial-aim').firstChild.data = SetSpace(financialAim);
+  document.getElementById('profit').firstChild.data = SetSpace(profit);
 
   let progress = profit / financialAim * 100;
   progress = progress.toFixed(2);
@@ -39,12 +39,13 @@ $(document).ready(function(){
 
   // задает пробелы между числами
   function SetSpace(str){
-    let result = str;
-    for (let i = str.length - 2; i >= 0; i--) {
-      if(i % 3 == 0){
-        result = result.substr(0, i) + result[i]+' '+ result.substr(i + 1);
-      }      
+    let result = str.split('').reverse().join('');
+
+    for (let i = 2; i < str.length; i = i+3) {
+      result = result.substr(0, i) + result[i] + ' '+ result.substr(i + 1);
     }
-    return result;
+
+
+    return result.split('').reverse().join('');
   }
 });
