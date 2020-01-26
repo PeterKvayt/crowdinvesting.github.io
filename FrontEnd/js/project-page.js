@@ -6,7 +6,7 @@ $(document).ready(function(){
   document.getElementById('financial-aim').firstChild.data = SetSpace(financialAim);
   document.getElementById('profit').firstChild.data = SetSpace(profit);
 
-  let progress = profit / financialAim * 100;
+  let progress = (profit / financialAim * 100) > 100 ? 100 : (profit / financialAim * 100);
   progress = progress.toFixed(2);
   // задает ширину прогресс бара
   $('.progress-bar').width(progress+'%');
@@ -41,10 +41,14 @@ $(document).ready(function(){
   function SetSpace(str){
     let result = str.split('').reverse().join('');
 
-    for (let i = 2; i < str.length; i = i+3) {
-      result = result.substr(0, i) + result[i] + ' '+ result.substr(i + 1);
-    }
+    for (let i = 2; i < result.length; ) {
 
+      result = result.substr(0, i) + result[i] + ' '+ result.substr(i + 1);
+
+      i = i + 4;
+      console.log(i);
+
+    }
 
     return result.split('').reverse().join('');
   }
