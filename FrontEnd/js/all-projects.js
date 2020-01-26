@@ -19,7 +19,7 @@ $(document).ready(function(){
   // инициализация проектов
   var projects = [
     new ProjectCard(
-      'images/exampleProjectPict.png',
+      'images/controller-main.jpg',
       'Бизнес',
       'Project Spark',
       'К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы,'+ 
@@ -51,7 +51,7 @@ $(document).ready(function(){
       'ЗАВЕРШЕН'
     ),
     new ProjectCard(
-      'images/exampleProjectPict.png',
+      'images/controller-main.jpg',
       'Стартап',
       'Project Spark',
       'К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы,'+ 
@@ -82,7 +82,7 @@ $(document).ready(function(){
       '0',
       'ЗАВЕРШЕН'
     ),new ProjectCard(
-      'images/exampleProjectPict.png',
+      'images/controller-main.jpg',
       'Стартап',
       'Project Spark',
       'К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы,'+ 
@@ -113,7 +113,7 @@ $(document).ready(function(){
       '0',
       'ЗАВЕРШЕН'
     ),new ProjectCard(
-      'images/exampleProjectPict.png',
+      'images/controller-main.jpg',
       'Стартап',
       'Project Spark',
       'К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы,'+ 

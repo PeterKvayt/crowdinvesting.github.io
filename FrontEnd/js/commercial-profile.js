@@ -2,7 +2,7 @@ $(document).ready(function(){
   // инициализация проектов
   var projects = [
     new ProjectCard(
-      'images/exampleProjectPict.png',
+      'images/controller-main.jpg',
       'Стартап',
       'Project Spark',
       'К громкому событию - 30-летнему юбилею легендарной панк-стёб-группы,'+ 
@@ -12,16 +12,6 @@ $(document).ready(function(){
       '100',
       '0',
       '20д.'
-    ),
-    new ProjectCard(
-      'images/vr.jpg',
-      'Стартап',
-      'Виртуальные радости 2019: Зима близко',
-      'Вестник игрового мира в оффлайне, журнал "Виртуальные радости" объявляет подписку до конца 2019 года',
-      '1000 ',
-      '3402',
-      '0',
-      '11ч.'
     )
   ]
 
