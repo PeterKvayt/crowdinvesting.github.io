@@ -42,8 +42,10 @@
 }
 .nav-item{
     padding: 0 5px;
+
 }
 .nav-link{
+    color: var(--darkGrey)!important;
     display: inline-block;
     position: relative;
     padding: auto;

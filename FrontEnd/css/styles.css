@@ -1,17 +1,4 @@
-﻿:root{
-  /* --greenPoles: #053F0C; */
-  --darkPirpleBlue: #462599;
-  --superLightBlue: #C5D2FC;
-  --lightBlue: #525FD1;
-  --superDarkBlue: #001575;
-  --darkBlue: #0A2086;
-  --backgroundColor: #E0EDFF;
-  --borderBtn: #7C7C7D;
-  --border: #DFDFDF;
-  --lightGreen: #00E600;
-}
-
-/* шрифты */
+﻿/* шрифты */
 *{
   font-family: 'Roboto', Helvetica, sans-serif;
   outline: none;
